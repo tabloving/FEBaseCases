@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Rainbow Rain</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: #000;
+			height: 100vh;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.drop {
+			width: 5px;
+			height: 120px;
+			position: absolute;
+			border-radius: 0 0 5px 5px;
+			animation: DropFall 5s linear infinite;
+		}
+
+		@keyframes DropFall {
+			from {
+				transform: translateY(-180%);
+			}
+
+			to {
+				transform: translateY(100vh);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		// 获取容器
+		const main = document.querySelector('body')
+		// 预设雨滴颜色
+		const colors = ['gold', 'orange', 'deeppink', 'skyblue', 'darkcyan', 'green', 'turquoise']
+		// 雨滴数量
+		const count = 280
+		// 循环输出雨滴到容器
+		for (let i = 0; i < count; i++) {
+			// 获取随机色
+			const index = Math.floor(Math.random() * colors.length)
+			// 创建雨滴元素
+			const drop = document.createElement('div')
+			// 添加类名
+			drop.classList.add('drop')
+
+			// 样式写法一
+			const styles = {
+				background: `linear-gradient(transparent, ${colors[index]})`, // 背景色
+				left: Math.random() * main.offsetWidth + 'px',  // 绝对定位左侧偏移量
+				animationDelay: Math.random() * -3 + 's',  // 动画延迟  设置为负值 提前加载，避免等待
+				animationDuration: 2 + Math.random() * 5 + 's',	// 	动画持续时间  添加下限数值
+			}
+
+			for (let key in styles) {
+				drop.style[key] = styles[key]
+			}
+			// 样式写法二
+			// drop.style.background = `linear-gradient(transparent,${colors[index]})`
+			// drop.style.left = Math.random() * main.offsetWidth + 'px'
+			// drop.style.animationDelay = Math.random() * -3 + 's'
+			// drop.style.animationDuration =2 +  Math.random() * 5 + 's'
+
+			//  将雨滴元素添加到容器里面渲染
+			main.appendChild(drop)
+		}
+	</script>
+</body>
+
+</html>
