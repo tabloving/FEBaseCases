@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CACTUS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #f5deb3;
+      display: grid;
+      place-items: center;
+    }
+
+    div {
+      width: 150px;
+      height: 90px;
+      background-color: #f4a460;
+      background-image: linear-gradient(to left,
+          rgba(0, 0, 0, 0.1) 25%,
+          rgba(0, 0, 0, 0.05) 25%,
+          rgba(0, 0, 0, 0.05) 50%,
+          rgba(0, 0, 0, 0) 50%);
+      border: 5px solid #b8860b;
+      border-radius: 8px 8px 30px 30px;
+      position: relative;
+    }
+
+    div::before {
+      content: '';
+      width: 100px;
+      height: 150px;
+      background: #90ee90;
+      position: absolute;
+      left: calc(50% - 50px);
+      top: -130px;
+      background-image: linear-gradient(to left,
+          rgba(0, 0, 0, 0.1) 20%, 
+          rgba(0, 0, 0, 0.05) 20%,
+          rgba(0, 0, 0, 0.05) 46%, transparent 46%),
+        radial-gradient(rgba(255, 255, 255, 0.8) 15%,
+          rgba(255, 255, 255, 0) 16%),
+        repeating-linear-gradient(to right,
+          #90ee90, #90ee90 8px,
+          #5ee65e 8px,
+          #5ee65e 16px);
+      background-size: auto auto, 15px 15px, auto auto;
+      border-radius: 50px 50px 0 0;
+      border: 5px solid#b8860b;
+      box-sizing: border-box;
+      z-index: -1;
+    }
+
+    div::after {
+      content: '';
+      width: 180px;
+      height: 30px;
+      position: absolute;
+      top: 90%;
+      left: calc(50% - 90px);
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
