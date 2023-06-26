@@ -1,4 +1,4 @@
-# <p align=center style=" color:#00adeb">FEBaseCases</p>
+# <p align=center>FEBaseCases</p>
 
 <p align=center>
 一个前端基础小案例的分享地
@@ -24,8 +24,9 @@
   - 书 [`Book`](/SingleDiv/Book.html)
   - 地球 [`Earth`](/SingleDiv/Earth.html)
   - 仙人掌 [`Cactus`](/SingleDiv/Cactus.html)
+  - 弹弓 [`Sling`](/SingleDiv/Sling.html)
     ......
 
-### B站地址
+### B 站地址
 
 BILIBILI：[`⏳ 传送门`](https://space.bilibili.com/30569760)

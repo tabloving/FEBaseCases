@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLING</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: #ddd;
+      display: grid;
+      place-items: center;
+    }
+
+    div {
+      width: 150px;
+      height: 150px;
+      border: 16px solid #a0522d;
+      border-radius: 0 0 100px 100px;
+      border-top: none;
+      box-shadow:
+        5px -5px 0 5px #c76739 inset,
+        -5px -5px 0 5px #c76739 inset,
+        0 8px 0 8px #824112;
+      margin-top: -50px;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    div::before {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 270px;
+      left: 50%;
+      margin-left: -90px;
+      background-repeat: no-repeat;
+      background-image:
+        linear-gradient(to left,
+          rgba(0, 0, 0, 0.2) 50%, transparent 50%),
+        repeating-linear-gradient(to bottom,
+          #cd853f, #cd853f 4px, #8b4513 4px, #8b4513 6px),
+        linear-gradient(to right,
+          rgba(0, 0, 0, 0.2) 50%, transparent 50%),
+        repeating-linear-gradient(to bottom,
+          #cd853f, #cd853f 4px, #8b4513 4px, #8b4513 6px), radial-gradient(ellipse at center top,
+          transparent 46%, #cd853f 46%,
+          #cd853f 48%, #ac6c2d 48%,
+          #ac6c2d 50%, transparent 50%),
+        linear-gradient(to right,
+          #c76739 25%, #a0522d 25%,
+          #a0522d 70%, #824112 70%),
+        radial-gradient(circle,
+          rgba(255, 255, 255, 0.2) 40%, transparent 40%),
+        radial-gradient(circle, #999 40%, transparent 40%);
+      background-size:
+        40px 30px, 40px 30px,
+        40px 30px, 40px 30px,
+        210px 290px, 36px 108px,
+        20px 20px, 50px 50px;
+      background-position:
+        right 4px top 30px, right 4px top 30px,
+        left 4px top 30px, left 4px top 30px,
+        center 50px, center bottom,
+        right 18px bottom 18px, right bottom;
+    }
+
+    div::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 40px;
+      left: 50%;
+      margin-left: -40px;
+      top: 217px;
+      background-color: #5e2f0d;
+      background-image:
+        linear-gradient(to bottom, #cd853f 50%, #ac6c2d 50%);
+      background-repeat: no-repeat;
+      background-size: 36px 8px;
+      background-position: center top 16px;
+      border-radius: 50px / 20px 20px 40px 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
