@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BONSAI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* brown */
+      --b-1: #d2691e;
+      --b-2: #a0522d;
+      --b-3: #8b4513;
+      /* red */
+      --r-1: #cd5c5c;
+      --r-2: #b43737;
+      /* green */
+      --g-1: #3cb371;
+      --g-2: #38a86a;
+      --g-3: #2a8050;
+      --g-4: #007100;
+      /* yellow */
+      --y-1: #f5deb3;
+      --y-2: #deb887;
+      --y-3: #f4a460;
+    }
+
+    body {
+      height: 100vh;
+      background: #f2f2f2;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    div {
+      width: 24em;
+      height: 18em;
+      position: relative;
+      background:
+        /* shelf */
+        linear-gradient(to bottom, var(--b-1), var(--b-2)) center bottom 1em / 100% 1.5em,
+        linear-gradient(to bottom, var(--b-3), var(--b-3)) left 2em bottom / 1em 1.1em,
+        linear-gradient(to bottom, var(--b-3), var(--b-3)) right 2em bottom / 1em 1.1em,
+        /* 1st */
+        linear-gradient(to left, var(--r-2) 10%, var(--r-1) 40%, var(--r-1) 60%, var(--r-2) 90%) left 1.5em bottom 4.5em / 5em 1em,
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) left 2em bottom 4em / 4em 0.5em,
+        linear-gradient(to left, var(--r-2) 10%, var(--r-1) 40%, var(--r-1) 60%, var(--r-2) 90%) left 2em bottom 2.5em / 4em 2em,
+        linear-gradient(to top, var(--g-4) 20%, var(--g-1) 100%) left 3.9em bottom 5em / 0.2em 30%,
+        /* 2nd */
+        radial-gradient(circle at 50% 0, var(--y-3), var(--b-1) 70%, transparent 70%) left 7.4em bottom 2em / 5em 2.5em,
+        linear-gradient(to top, var(--g-4) 20%, var(--g-1) 100%) left 9.5em bottom 4em / 0.2em 30%,
+        radial-gradient(ellipse at 100% 50%, var(--g-1) 70%, transparent 70%) left 8.6em bottom 6.4em / 1em 3em,
+        linear-gradient(to top, var(--g-4) 20%, var(--g-1) 100%) left 10.1em bottom 4em / 0.2em 25%,
+        radial-gradient(ellipse at 0 50%, var(--g-1) 70%, transparent 70%) left 10.2em bottom 5.5em / 1em 3em,
+        /* 3rd */
+        linear-gradient(to left, #aaa 10%, #ccc 40%, #ccc 60%, #aaa 90%) right 7.4em bottom 2.5em / 3em 3em,
+        linear-gradient(to top, var(--g-4) 20%, var(--g-1) 100%) right 8.8em bottom 5.5em / 0.2em 23%,
+        radial-gradient(circle, var(--g-1) 55%, transparent 55%) right 8.8em bottom 8.9em / 1em 1em,
+        radial-gradient(circle, var(--g-2) 55%, transparent 55%) right 8.8em bottom 7.9em / 1em 1em,
+        radial-gradient(circle, var(--g-3) 55%, transparent 55%) right 8.8em bottom 6.9em / 1em 1em,
+        radial-gradient(circle, var(--g-4) 55%, transparent 55%) right 8.8em bottom 5.9em / 1em 1em,
+        radial-gradient(circle, var(--g-1) 55%, transparent 55%) right 8em bottom 8.9em / 1em 1em,
+        radial-gradient(circle, var(--g-2) 55%, transparent 55%) right 8em bottom 7.9em / 1em 1em,
+        radial-gradient(circle, var(--g-3) 55%, transparent 55%) right 8em bottom 6.9em / 1em 1em,
+        radial-gradient(circle, var(--g-4) 55%, transparent 55%) right 8em bottom 5.9em / 1em 1em,
+        /* 4th */
+        linear-gradient(to left, var(--y-2) 10%, var(--y-1) 40%, var(--y-1) 60%, var(--y-2) 90%) right 2.1em bottom 2.8em / 4em 2.5em,
+        linear-gradient(to left, var(--b-3) 10%, var(--b-2) 40%, var(--b-2) 60%, var(--b-3) 90%) right 2.4em bottom 2.5em / 3.4em 0.5em,
+        radial-gradient(ellipse, var(--g-1) 70%, transparent 70%) right 2.6em bottom 2.5em / 3em 5.5em;
+      background-repeat: no-repeat;
+    }
+
+    div::before {
+      content: '';
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      left: 2.9em;
+      bottom: 9.5em;
+      background-color: var(--g-1);
+      border-radius: 0 90% 0 90%;
+      box-shadow: 0 1.5em var(--g-2), 0 3em var(--g-3);
+    }
+
+    div::after {
+      content: '';
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      left: 4.1em;
+      bottom: 9em;
+      background-color: var(--g-2);
+      border-radius: 90% 0 90% 0;
+      box-shadow: 0 1.5em 0 var(--g-3), 0 3em 0 var(--g-4);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
