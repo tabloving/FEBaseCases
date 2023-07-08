@@ -12,24 +12,25 @@
 <img src='https://img.shields.io/badge/status-pending-orange?style=flat-square' alt="status" style='cursor:pointer' />
 </p>
 
-### 内容
+### 目录结构
+```
+└── public/
+    ├── thumb/               // 缩略图
+    ├── ...
+└── src/
+    ├── Effects/             // 特效类
+    ├── SingleDiv/           // 单标签绘图
+    ├── ... 
+└── ...
+```
 
-- 网页特效 [`Effects`](/Effects/)
-  - 彩虹雨 [`RainbowRain`](/Effects/RainbowRain/rainbowrain.html)
-- 一个 div 画图 [`SingleDiv`](/SingleDiv/)
-  - 云朵 [`Cloud`](/SingleDiv/Cloud.html)
-  - 山 [`Mountains`](/SingleDiv/Mountains.html)
-  - 铃铛 [`Bell`](/SingleDiv/Bell.html)
-  - 铅笔 [`Pencil`](/SingleDiv/Pencil.html)
-  - 书 [`Book`](/SingleDiv/Book.html)
-  - 地球 [`Earth`](/SingleDiv/Earth.html)
-  - 仙人掌 [`Cactus`](/SingleDiv/Cactus.html)
-  - 弹弓 [`Sling`](/SingleDiv/Sling.html)
-  - 盆景 [`Bonsai`](/SingleDiv/Bonsai.html)
-  - 汉堡包 [`Hamburger`](/SingleDiv/Hamburger.html)
-  - 鸡蛋 [`Egg`](/SingleDiv/Egg.html)
-    ......
+### 网页特效 [`🍁Effects`](/src/Effects/)
 
+> 利用 `CSS` + `JS`，实现一些绚丽的网页背景或文本效果，提升网页的视效。
+
+### 单标签绘图 [`🖌️SingleDiv`](/src/SingleDiv/)
+
+> 使用一个`div`标签，利用`CSS`的背景样式与阴影进行绘制图案，呈现出`不可思议`的效果。旨在熟练掌握与运用css背景的叠加与多重阴影的组合技。
 ### B 站地址
 
 BILIBILI：[`⏳ 传送门`](https://space.bilibili.com/30569760)
