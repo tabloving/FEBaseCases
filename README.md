@@ -6,10 +6,10 @@
 <br>内容实现多样化，所列方法仅供参考。</p>
 
 <p align=center>
-<img src='https://img.shields.io/badge/HTML-5-blue?style=flat-square' alt="vue version" style='cursor:pointer' />
-<img src='https://img.shields.io/badge/CSS-3-blue?style=flat-square' alt="vuex version" style='cursor:pointer' />
-<img src='https://img.shields.io/badge/JavaScript-ES6-blue?style=flat-square' alt="element version" style='cursor:pointer' />
-<img src='https://img.shields.io/badge/status-pending-orange?style=flat-square' alt="vueI18n version" style='cursor:pointer' />
+<img src='https://img.shields.io/badge/HTML-5-blue?style=flat-square' alt="html version" style='cursor:pointer' />
+<img src='https://img.shields.io/badge/CSS-3-blue?style=flat-square' alt="css version" style='cursor:pointer' />
+<img src='https://img.shields.io/badge/JavaScript-ES6-blue?style=flat-square' alt="js version" style='cursor:pointer' />
+<img src='https://img.shields.io/badge/status-pending-orange?style=flat-square' alt="status" style='cursor:pointer' />
 </p>
 
 ### 内容
@@ -27,6 +27,7 @@
   - 弹弓 [`Sling`](/SingleDiv/Sling.html)
   - 盆景 [`Bonsai`](/SingleDiv/Bonsai.html)
   - 汉堡包 [`Hamburger`](/SingleDiv/Hamburger.html)
+  - 鸡蛋 [`Egg`](/SingleDiv/Egg.html)
     ......
 
 ### B 站地址
