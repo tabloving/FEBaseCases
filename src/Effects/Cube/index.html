@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illusion Cube</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #111;
+      display: grid;
+      gap: 4px;
+      grid-template-columns: repeat(auto-fill, 40px);
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .cube {
+      width: 40px;
+      height: 40px;
+      background: #222;
+    }
+
+    .shading {
+      animation: shading 3s linear forwards;
+    }
+
+    @keyframes shading {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      50% {
+        background: chartreuse;
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+</body>
+<script>
+  const count = 1200
+  for (let i = 0; i < count; i++) {
+    const body = document.body
+    const cube = document.createElement('div')
+    cube.classList.add('cube')
+    body.appendChild(cube)
+  }
+
+  function shading() {
+    const cubes = document.querySelectorAll('.cube')
+    const num = Math.floor(Math.random() * cubes.length)
+    cubes[num].classList.toggle('shading')
+  }
+  setInterval(shading)
+</script>
+
+</html>
