@@ -11,10 +11,8 @@
 <img src='https://img.shields.io/badge/JavaScript-ES6+-blue?style=flat-square' alt="js version" style='cursor:pointer' />
 <img src='https://img.shields.io/badge/status-updating-orange?style=flat-square' alt="status" style='cursor:pointer' />
 <br>
-<img src='https://img.shields.io/github/repo-size/llliuyang/FEBaseCases?style=flat-square&color=rgb(118, 139, 212)
-'   />
-<img src='https://img.shields.io/github/last-commit/llliuyang/FEBaseCases/main?style=flat-square&color=rgb(124, 179, 66)
-' />
+<img src='https://img.shields.io/github/repo-size/llliuyang/FEBaseCases?style=flat-square&color=rgb(118, 139, 212)' alt="repo size" style='cursor:pointer' />
+<img src='https://img.shields.io/github/last-commit/llliuyang/FEBaseCases/main?style=flat-square&color=rgb(124, 179, 66)' alt="last commit" style='cursor:pointer'/>
 </p>
 
 <br>
