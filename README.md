@@ -8,18 +8,25 @@
 <p align=center>
 <img src='https://img.shields.io/badge/HTML-5-blue?style=flat-square' alt="html version" style='cursor:pointer' />
 <img src='https://img.shields.io/badge/CSS-3-blue?style=flat-square' alt="css version" style='cursor:pointer' />
-<img src='https://img.shields.io/badge/JavaScript-ES6-blue?style=flat-square' alt="js version" style='cursor:pointer' />
-<img src='https://img.shields.io/badge/status-pending-orange?style=flat-square' alt="status" style='cursor:pointer' />
+<img src='https://img.shields.io/badge/JavaScript-ES6+-blue?style=flat-square' alt="js version" style='cursor:pointer' />
+<img src='https://img.shields.io/badge/status-updating-orange?style=flat-square' alt="status" style='cursor:pointer' />
+<br>
+<img src='https://img.shields.io/github/repo-size/llliuyang/FEBaseCases?style=flat-square&color=rgb(118, 139, 212)
+'   />
+<img src='https://img.shields.io/github/last-commit/llliuyang/FEBaseCases/main?style=flat-square&color=rgb(124, 179, 66)
+' />
 </p>
+
+<br>
 
 ### 目录结构
 ```
 └── public/
-    ├── thumb/               // 缩略图
+    ├── thumb/             // 缩略图
     ├── ...
 └── src/
-    ├── Effects/             // 特效类
-    ├── SingleDiv/           // 单标签绘图
+    ├── Effects/           // 特效类
+    ├── SingleDiv/         // 单标签绘图
     ├── ... 
 └── ...
 ```
@@ -28,9 +35,10 @@
 
 > 利用 `CSS` + `JS`，实现一些绚丽的网页背景或文本效果，提升网页的视效。
 
-### 单标签绘图 [`🖌️SingleDiv`](/src/SingleDiv/)
+### 单标签绘图 [`🖌️SingleDiv`](/src/SingleDiv/README.md)
 
 > 使用一个`div`标签，利用`CSS`的背景样式与阴影进行绘制图案，呈现出`不可思议`的效果。旨在熟练掌握与运用css背景的叠加与多重阴影的组合技。
+
 ### B 站地址
 
 BILIBILI：[`⏳ 传送门`](https://space.bilibili.com/30569760)
