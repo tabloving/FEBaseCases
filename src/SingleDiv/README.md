@@ -29,6 +29,6 @@
 
 <!-- 5 -->
 
-| [`PowerWire`](/src/SingleDiv/PowerWire.html) |  [`CONTINUE`](/src/SingleDiv/README.md) | [`CONTINUE`]() |
+| [`PowerWire`](/src/SingleDiv/PowerWire.html) |  [`Camera`](/src/SingleDiv/Camera.html) | [`CONTINUE`]() |
 |:---:|:---:|:---:|
-|[![汉堡包](/public/thumb/powerwire.png)](/src/SingleDiv/Hamburger.html) | [![](/public/thumb/continue.png)](/src/SingleDiv/README.md)|[![](/public/thumb/continue.png)](/src/SingleDiv/README.md) |
+|[![汉堡包](/public/thumb/powerwire.png)](/src/SingleDiv/Hamburger.html) | [![照相机](/public/thumb/camera.png)](/src/SingleDiv/Camera.html)|[![](/public/thumb/continue.png)](/src/SingleDiv/README.md) |
