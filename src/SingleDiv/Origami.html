@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORIGAMI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #2e2e2e;
+      display: grid;
+      place-items: center;
+    }
+
+    div {
+      width: 380px;
+      height: 380px;
+      background:
+        linear-gradient(130deg,
+          transparent 49.5%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0.6) 50.5%,
+          transparent 51%) 38% 41%/5em 6em,
+        linear-gradient(-130deg,
+          transparent 49.5%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0.6) 50.5%,
+          transparent 51%) 62% 41%/5em 6em;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    /* 千纸鹤 */
+    div::before {
+      content: '';
+      position: absolute;
+      width: 6em;
+      height: 5em;
+      left: 38%;
+      top: 19%;
+      background:
+        linear-gradient(135deg,
+          transparent 49%,
+          rgba(128, 0, 0, 0.4) 50%,
+          transparent 55%) 1.87em 1.94em/0.88em 0.88em,
+        linear-gradient(45deg,
+          transparent 54.5%,
+          #ffa500 55%) 0.78em 1.94em/2.1em 2.1em,
+        linear-gradient(-85deg,
+          transparent 3%,
+          rgba(128, 0, 0, 0.5) 8.3%,
+          transparent 8.4%) 1.28em 0.36em/1.6em 1.6em,
+        linear-gradient(-85deg,
+          #ffa500 7.5%,
+          transparent 8.5%) 1.28em 0.36em/1.6em 1.6em,
+        linear-gradient(-45deg,
+          #ff6347 50.5%,
+          transparent 51%) 1.28em 0.35em/1.6em 1.6em,
+        linear-gradient(85deg,
+          rgba(128, 0, 0, 0.7),
+          transparent 15%) 2.86em 0.35em/2.5em 3.45em,
+        linear-gradient(-45deg,
+          transparent 54%,
+          #ff6347 54.5%) 2.86em 0.35em/2.5em 2.5em,
+        linear-gradient(120deg,
+          rgba(128, 0, 0, 0.5) 30%,
+          transparent 40%) 2.9em 2.05em/0.55em 1.75em,
+        linear-gradient(148deg,
+          transparent 35%,
+          rgba(128, 0, 0, 0.5) 50%) 1em 0.95em/2em 1em,
+        linear-gradient(45deg,
+          transparent 22%,
+          #ff6347 22.1%, #ff6347 49.2%,
+          transparent 49.3%) 1em 0.3em/5em 3.5em,
+        linear-gradient(24deg,
+          #ff6347 53.5%,
+          transparent 54%) 1em 0/0.68em 0.35em,
+        linear-gradient(-83deg,
+          rgba(128, 0, 0, 0.5) 5%,
+          transparent 15%) 0 0/1em 1em,
+        linear-gradient(130deg,
+          transparent 54%,
+          #ffa500 54.5%) 0 0/1em 1em;
+      background-repeat: no-repeat;
+      transform: scale(1.3);
+    }
+
+    /* 文本：设计稿为字宽46px 高72px 文本间隔 14px */
+    div::after {
+      content: '';
+      position: absolute;
+      width: 374px;
+      height: 100px;
+      left: 50%;
+      bottom: 20%;
+      margin-left: -187px;
+      background:
+        /* T */
+        linear-gradient(#fff, #fff) 14px 14px/46px 14px,
+        linear-gradient(#aaa, #fff 40%) 30px 14px/14px 72px,
+        /* H */
+        linear-gradient(#fff, #fff) 74px 14px/14px 72px,
+        linear-gradient(#fff, #fff) 106px 14px/14px 72px,
+        linear-gradient(to right, #aaa, #fff 45% 55%, #aaa) 74px 43px/46px 14px,
+        /* E */
+        linear-gradient(138deg, transparent 25%, #fff 26%) 134px 14px/46px 14px,
+        linear-gradient(45deg, transparent 25%, #fff 25%) 134px 72px/46px 14px,
+        linear-gradient(to bottom, #aaa, #fff 20% 80%, #aaa) 134px 28px/14px 44px,
+        linear-gradient(to right, #aaa, #fff 25%) 148px 43px/18px 14px,
+        /* E */
+        linear-gradient(138deg, transparent 25%, #fff 26%) 194px 14px/46px 14px,
+        linear-gradient(45deg, transparent 25%, #fff 25%) 194px 72px/46px 14px,
+        linear-gradient(to bottom, #aaa, #fff 20% 80%, #aaa) 194px 28px/14px 44px,
+        linear-gradient(to right, #aaa, #fff 25%) 208px 43px/18px 14px,
+        /* N */
+        linear-gradient(-112deg, transparent 35%, #fff 35% 59%, transparent 59%) 253px 14px/46px 72px,
+        linear-gradient(#fff 50%, #aaa) 286px 14px/14px 72px,
+        linear-gradient(#aaa, #fff 50%) 254px 14px/14px 72px,
+        /* D */
+        linear-gradient(-45deg, transparent 25%, #fff 25.3%) 314px 72px/46px 14px,
+        linear-gradient(to top, #aaa, #fff 40%) 314px 14px/14px 72px,
+        linear-gradient(to right, #aaa, #fff) 328px 14px/8px 14px,
+        linear-gradient(-138deg, transparent 34.5%, #fff 34.8%) 328px 14px/28px 14px,
+        linear-gradient(to bottom, #aaa, #fff 25%, #fff 75%, #aaa) 344px 28px/14px 44px;
+      background-repeat: no-repeat;
+      background-color: #dc143c;
+      box-shadow:
+        0 0 0 0.2em #fff,
+        0 0.5em 1em 0 rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
