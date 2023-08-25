@@ -32,3 +32,9 @@
 | [`PowerWire`](/src/SingleDiv/PowerWire.html) |  [`Camera`](/src/SingleDiv/Camera.html) | [`Origami`](/src/SingleDiv/Origami.html) |
 |:---:|:---:|:---:|
 |[![汉堡包](/public/thumb/powerwire.png)](/src/SingleDiv/Hamburger.html) | [![照相机](/public/thumb/camera.png)](/src/SingleDiv/Camera.html)|[![折纸](/public/thumb/origami.png)](/src/SingleDiv/Origami.html) |
+
+<!-- 6 -->
+
+| [`Letter`](/src/SingleDiv/letter.html) |  [`Continue`](/src/SingleDiv/README.md) | [`Continue`](/src/SingleDiv/README.md) |
+|:---:|:---:|:---:|
+|[![信函](/public/thumb/letter.png)](/src/SingleDiv/letter.html) | [![待续](/public/thumb/continue.png)](/src/SingleDiv/README.md)|[![待续](/public/thumb/continue.png)](/src/SingleDiv/README.md) |

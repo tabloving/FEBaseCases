@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LETTER</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #eee4db;
+    }
+
+    div {
+      width: 250px;
+      height: 350px;
+      background:
+        /* 封面 */
+        radial-gradient(ellipse,
+          rgba(255, 255, 255, 0.2) 10%,
+          transparent 40%) 50% 110%/120% 40%,
+        linear-gradient(to right,
+          #e4be78, transparent 25%) 50% 100%/94% 50%,
+        linear-gradient(to left,
+          #e4be78, transparent 25%) 50% 100%/94% 50%,
+        linear-gradient(to bottom,
+          #f5deb3, #ebbd66) 50% 100%/94% 50%,
+        /* 函件 */
+        linear-gradient(#87cefa, #87cefa) 50% 14%/85% .5%,
+        linear-gradient(#ccc, #ccc) 50% 10%/0.25% 60%,
+        repeating-linear-gradient(to bottom,
+          #ccc, #ccc 1%,
+          transparent 1%,
+          transparent 20%) 50% 31%/85% 30%,
+        linear-gradient(to bottom,
+          #fff 30%, #eee) 50% 40%/85% 20%,
+        linear-gradient(40deg,
+          #fff 96%,
+          transparent 96.1%) 50% 10%/85% 40%,
+        linear-gradient(to right,
+          transparent,
+          rgba(0, 0, 0, 0.2) 6%) 19% 15%/70% 45%,
+        linear-gradient(to left,
+          transparent,
+          rgba(0, 0, 0, 0.2) 6%) 81% 25%/70% 39%;
+      background-repeat: no-repeat;
+      box-shadow: 0 0.8em 0.4em -0.65em rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    div::before,
+    div::after {
+      font-size: 1.2em;
+      font-weight: bold;
+      position: absolute;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    div::before {
+      content: '2023年8月24日 周四';
+      top: 21%;
+      left: 11%;
+      transform: rotate(-3deg);
+      background-image:
+        linear-gradient(45deg,
+          transparent 35%, #999, #666, #333, #444, #999, #ddd);
+      text-shadow: 0.1em 0 0 rgba(0, 0, 0, 0.3);
+    }
+
+    div::after {
+      content: '海洋环境灾难日';
+      top: 34%;
+      left: 24%;
+      transform: rotate(5deg);
+      background-image:
+        linear-gradient(30deg,
+          #ccc, #999, #444, #999, #bbb, #777, transparent 70%);
+      text-shadow: 0.07em 0 0 rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
