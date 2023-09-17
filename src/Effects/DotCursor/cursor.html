@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dot Cursor Effect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: #2196F3;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      cursor: none;
+      position: relative;
+    }
+
+    #cursor-dot {
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 1s linear;
+      pointer-events: none;
+    }
+
+    #cursor-circle {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 50%;
+      border: 1px solid #fff;
+      box-sizing: border-box;
+      position: absolute;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.3s linear, border 0.3s linear, width 0.2s linear, height 0.2s linear, opacity 0.7s 0.3s linear;
+      pointer-events: none;
+    }
+
+    a {
+      font-size: 2em;
+      color: cyan;
+      transition: 0.3s linear;
+    }
+
+    a:hover {
+      font-size: 2.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-circle"></div>
+
+  <a href="#">THIS IS A LINK</a>
+  <a href="#">THIS IS A LINK</a>
+</body>
+<script>
+  const dot = document.getElementById('cursor-dot')
+  const circle = document.getElementById('cursor-circle')
+  const opacity = (dot.style.opacity == 1 && circle.style.opacity == 1)
+
+  let dotX = 0, dotY = 0, circleX = 0, circleY = 0;
+  document.addEventListener('mousemove', (e) => {
+    dotX = e.clientX
+    dotY = e.clientY
+    dot.style.top = `${dotY}px`
+    dot.style.left = `${dotX}px`
+    if (!opacity) {
+      dot.style.opacity = circle.style.opacity = 1
+    }
+  })
+
+  const circleAnimation = () => {
+    const parts = 6
+    circleX += (dotX - circleX) / parts
+    circleY += (dotY - circleY) / parts
+    circle.style.top = `${circleY}px`
+    circle.style.left = `${circleX}px`
+    window.requestAnimationFrame(circleAnimation)
+  }
+  window.requestAnimationFrame(circleAnimation)
+
+  document.querySelectorAll('a').forEach(element => {
+    element.addEventListener('mouseover', (e) => {
+      circle.style.backgroundColor = `rgba(255, 255, 255, 0.4)`
+      circle.style.border = `1px solid transparent`
+      circle.style.width = `80px`
+      circle.style.height = `80px`
+    })
+    element.addEventListener('mouseleave', (e) => {
+      circle.style.backgroundColor = `rgba(255, 255, 255, 0)`
+      circle.style.border = `1px solid #fff`
+      circle.style.width = '50px'
+      circle.style.height = '50px'
+    })
+  });
+
+</script>
+
+</html>
