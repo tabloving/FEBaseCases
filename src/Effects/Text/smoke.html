@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smoke Effect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background-color: #2e2e2e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column wrap;
+
+      & p {
+        width: 80%;
+        max-width: 800px;
+        font-size: 1.6em;
+        color: #fff;
+        letter-spacing: 2px;
+        padding: 20px 40px;
+
+        & span {
+          position: relative;
+          cursor: pointer;
+          display: inline-block;
+          user-select: none;
+
+          &.active {
+            animation: Smoke 3s linear forwards;
+            transform-origin: top right;
+          }
+        }
+      }
+    }
+
+    @keyframes Smoke {
+      0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+
+      30% {
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      100% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: translate(400px, -400px) rotate(3turn) scale(3.5);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    困厄的生活，让梦想形同碎碧。几年的摸爬滚打，体验了甘苦杂糅的生活、笑泪并存的经历，在丰满理想与骨感现实的强烈对比中，见识过人心妍蚩。
+    曾经是满怀憧憬、一腔热血，然而在社会的演武场中，拼得狼狈不堪，只得踽踽前行。
+  </p>
+  <p>挣脱桎梏，灭除心猿。众生皆苦，万相本无，唯有自渡。</p>
+  <p>
+    弃捐勿复道，努力加餐饭。
+  </p>
+</body>
+<script>
+  const p = document.querySelectorAll('p')
+  p.forEach(text => {
+    text.innerHTML = text.textContent.replace(/\S/g, '<span>$&</span>')
+  });
+
+  const letters = document.querySelectorAll('span')
+  for (let i = 0; i < letters.length; i++) {
+    letters[i].addEventListener('mouseover', () => {
+      letters[i].classList.add('active')
+    })
+  }
+</script>
+
+</html>
