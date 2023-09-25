@@ -26,8 +26,10 @@
 └── src/
     └── Effects/                  // 特效类
         ├── Background/           // 背景特效
-        ├── Button/               // 按钮动画
+        ├── Cursor/               // 鼠标交互
         ├── Loading/              // 加载动画
+        ├── Button/               // 按钮动效
+        ├── Text/                 // 文本效果
     └── SingleDiv/                // 单标签绘图
         ├── ...
 └── ...
