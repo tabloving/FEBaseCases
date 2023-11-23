@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLINK STARS BACKGROUND</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100vh;
+      background: #2e2e2e;
+      position: relative;
+      overflow: hidden;
+
+      .star {
+        color: #2a2a2a;
+        position: absolute;
+
+        &::before {
+          content: '\f005';
+          font-family: fontAwesome;
+        }
+
+        &.blink {
+          color: #0f0;
+          z-index: 1;
+          text-shadow: 0 0 5px, 0 0 10px, 0 0 30px;
+        }
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="container"></section>
+</body>
+<script>
+  let count = 150
+  for (let i = 0; i < count; i++) {
+    let star = document.createElement('div')
+    let size = 10 + Math.random() * 20
+    star.classList.add('star')
+    star.style.fontSize = `${size}px`
+    star.style.top = `${Math.random() * + innerHeight}px`
+    star.style.left = `${Math.random() * + innerWidth}px`
+    star.style.filter = `hue-rotate(${i * 5}deg)`
+    document.querySelector('.container').appendChild(star)
+  }
+
+  function Blink() {
+    let stars = document.querySelectorAll('.star')
+    let index = Math.floor(Math.random() * stars.length)
+    stars[index].classList.toggle('blink')
+  }
+
+  setInterval(Blink, 200)
+</script>
+
+</html>
