@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEXT EFFECT - 3D TEXT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: #167c80;
+      user-select: none;
+    }
+
+    #text {
+      font-size: 18vw;
+      font-family: AudioWide, LiSu, sans-serif;
+      color: #fff;
+      transform: rotate(-30deg) skew(25deg);
+      text-align: center;
+      position: relative;
+
+      &::before {
+        --offset: 32px;
+        content: attr(data-text);
+        position: absolute;
+        left: calc(var(--offset) * -1);
+        top: var(--offset);
+        color: rgba(0, 0, 0, 0.3);
+        filter: blur(5px);
+        text-shadow: none;
+        z-index: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p id="text" data-text="变质的洋流">
+    变质的洋流
+  </p>
+</body>
+<script>
+  let text = document.getElementById('text');
+
+  /**
+   * 生成阴影
+   * @param {number} count 阴影层数
+   * @param {string} color 阴影颜色
+   * @returns {string} 阴影样式
+   */
+  function GenShadow(count = 20, color = '#ddd') {
+    let shadow = '';
+    for (let i = 0; i < count; i++) {
+      shadow += `${shadow ? ',' : ''}${-i * 1}px ${i * 1}px 0 ${color}`
+    }
+    return shadow;
+  }
+
+  text.style.textShadow = GenShadow(24);
+</script>
+
+</html>
