@@ -15,9 +15,13 @@ CSS绘图系列
 
 <!-- 2 -->
 
-| [`Batman`](/src/CSSDrawing/Batman/index.html)  |    [`Santa`](/src/CSSDrawing/SantaClaus/index.html)    |    [`Continue`](/src/CSSDrawing/README.md)    |
+| [`Batman`](/src/CSSDrawing/Batman/index.html)  |    [`Santa`](/src/CSSDrawing/SantaClaus/index.html)    |    [`Bear`](/src/CSSDrawing/Bear/index.html)    |
 | :--------------------------------------------: | :-------------------------------------------: | :-------------------------------------------: |
-| ![蝙蝠侠](/public/thumb/cssdrawing/batman.png) | ![圣诞老人](/public/thumb/cssdrawing/santa.png) | ![待续](/public/thumb/singlediv/continue.png) |
+| ![蝙蝠侠](/public/thumb/cssdrawing/batman.png) | ![圣诞老人](/public/thumb/cssdrawing/santa.png) | ![小熊](/public/thumb/cssdrawing/bear.png) |
+
+<!-- 3 -->
+
+| [`Continue`](/src/CSSDrawing/README.md) |](/public/thumb/singlediv/continue.png) |
 
 <!-- [`Continue`](/src/CSSDrawing/README.md)
 ![待续](/public/thumb/singlediv/continue.png) -->
