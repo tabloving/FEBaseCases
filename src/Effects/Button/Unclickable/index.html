@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUTTON EFFECT - UNCLICKABLE</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      --purple: #792ddd;
+      height: 100vh;
+      background-color: var(--purple);
+      display: grid;
+      place-items: center;
+      font-family: PingFang SC, MicroSoft YaHei, sans-serif;
+      user-select: none;
+
+      .wrapper {
+        width: 600px;
+        height: 400px;
+        background-color: #fff;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+
+        .icon {
+          font-size: 7em;
+          color: var(--purple);
+          border: 5px solid transparent;
+          outline: 5px solid;
+          border-radius: 50%;
+          transition: filter 1.5s ease;
+        }
+
+        .title {
+          font-size: 2.6em;
+          color: var(--purple);
+          letter-spacing: 2px;
+        }
+
+        .button-group {
+          width: 100%;
+          height: 46px;
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+
+          .button {
+            width: 150px;
+            height: inherit;
+            border: 2px solid var(--purple);
+            border-radius: calc(infinity * 1px);
+            position: absolute;
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            box-shadow: 4px 4px 20px 4px rgba(121, 45, 221, 0.4);
+
+            &.yes {
+              margin-left: -200px;
+              color: #fff;
+              background-color: var(--purple);
+              animation-delay: 1s;
+              transition: .3s linear;
+
+              &:hover {
+                opacity: 0.9;
+              }
+            }
+
+            &.no {
+              margin-right: -200px;
+              color: var(--purple);
+            }
+          }
+        }
+      }
+    }
+
+    @keyframes disappear {
+      0% {
+        pointer-events: none;
+      }
+
+      100% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: scale(2);
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form class="wrapper">
+    <i class="icon fa-solid fa-circle-question"></i>
+    <h2 class="title">喜欢我吗？</h2>
+    <div class="button-group">
+      <button class="button yes">爱得深沉</button>
+      <button class="button no">别来沾边</button>
+    </div>
+  </form>
+</body>
+<script>
+  const yes = document.querySelector(".yes");
+  const no = document.querySelector(".no");
+  const wrapper = document.querySelector(".wrapper");
+  const title = document.querySelector(".title");
+  const icon = document.querySelector(".icon");
+
+  yes.addEventListener("click", (e) => {
+    e.preventDefault()
+    title.innerHTML = '2024，请从爱自己开始<br/>'
+    icon.classList.add('fa-shield-heart')
+    icon.style.outline = 'none'
+    icon.style.filter = 'drop-shadow(0 0 60px)'
+    no.style.animationName = 'disappear'
+    yes.style.animationName = 'disappear'
+
+  })
+
+  const wrapperRect = wrapper.getBoundingClientRect()
+  const noRect = no.getBoundingClientRect()
+  no.addEventListener("mouseover", (e) => {
+    e.preventDefault()
+    no.style.left = `${Math.floor(Math.random() * (wrapperRect.width - noRect.width))}px`
+    no.style.top = `${Math.floor(Math.random() * (wrapperRect.height - noRect.height))}px`
+  })
+</script>
+
+</html>
