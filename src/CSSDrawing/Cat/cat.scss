@@ -1,0 +1,303 @@
+$primary: #f3f2fc;
+$ghostbg: #2a003f;
+$body: #ffeaeb;
+$shade: #ffc3c3b3;
+$dark: #340000;
+$heart: #ff0000;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(37, 0, 45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin FLexItem {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cattery {
+  width: 750px;
+  height: 750px;
+  border-radius: 90%;
+  background-color: $ghostbg;
+  box-shadow: 0px 0px 95px $shade;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .miao-face {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: $body;
+    border-radius: 200px 200px 100px 100px;
+
+    .ears {
+      @include FLexItem;
+      position: relative;
+
+      .ear {
+        width: 100px;
+        height: 200px;
+        background-color: $body;
+        position: absolute;
+        top: -30px;
+
+        &:before {
+          content: '';
+          background-color: $shade;
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          border-radius: 100px;
+          box-shadow: 0px 0px 75px $shade;
+        }
+
+        &.ear1 {
+          right: 55px;
+          border-radius: 200px 300px 0 0;
+          transform: rotate(45deg);
+
+          &:before {
+            right: 40px;
+            top: 40px;
+          }
+        }
+
+        &.ear2 {
+          left: 55px;
+          border-radius: 300px 200px 0 0;
+          transform: rotate(-45deg);
+
+          &:before {
+            left: 40px;
+            top: 40px;
+          }
+        }
+      }
+    }
+
+    .eyes {
+      @include FLexItem;
+
+      .eye {
+        width: 75px;
+        height: 75px;
+        background-color: $dark;
+        position: relative;
+        top: 100px;
+        border-radius: 100px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          height: 35px;
+          width: 35px;
+          background-color: $primary;
+          border-radius: 100px;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          background-color: $primary;
+          border-radius: 100px;
+        }
+
+        &.eye1:before {
+          top: 10px;
+          right: 15px;
+        }
+
+        &.eye1:after {
+          bottom: 15px;
+          left: 25px;
+        }
+
+        &.eye2:before {
+          top: 10px;
+          left: 15px;
+        }
+
+        &.eye2:after {
+          bottom: 15px;
+          right: 25px;
+        }
+      }
+    }
+
+    .lips {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: 120px;
+
+      .lip {
+        width: 35px;
+        height: 15px;
+        border: 5px solid $dark;
+        border-top: none;
+        border-radius: 0 0 150px 150px;
+
+        &.lip1 {
+          transform: translateX(6px) rotate(-20deg);
+        }
+
+        &.lip2 {
+          transform: translateX(-6px) rotate(20deg);
+        }
+      }
+    }
+
+    .nose {
+      width: 25px;
+      height: 15px;
+      background-color: $dark;
+      position: absolute;
+      top: 150px;
+      left: 190px;
+      border-radius: 80px 80px 150px 150px;
+    }
+
+    .blushes {
+      @include FLexItem;
+
+      .blush {
+        width: 35px;
+        height: 35px;
+        background-color: $shade;
+        position: relative;
+        top: 100px;
+        border-radius: 100px;
+
+        &.blush1 {
+          right: 50px;
+        }
+
+        &.blush2 {
+          left: 50px;
+        }
+      }
+    }
+
+    .mustache {
+      width: 50px;
+      height: 5px;
+      margin: 5px;
+      position: absolute;
+      border-radius: 50px;
+      background-color: $dark;
+      border: 1px solid $body;
+
+      &.mustache1 {
+        bottom: 80px;
+        left: -30px;
+        transform: rotate(5deg);
+      }
+
+      &.mustache2 {
+        bottom: 50px;
+        left: -30px;
+        transform: rotate(-15deg);
+      }
+
+      &.mustache3 {
+        bottom: 25px;
+        left: -10px;
+        transform: rotate(-45deg);
+      }
+
+      &.mustache4 {
+        bottom: 80px;
+        right: -30px;
+        transform: rotate(5deg);
+      }
+
+      &.mustache5 {
+        bottom: 50px;
+        right: -30px;
+        transform: rotate(15deg);
+      }
+
+      &.mustache6 {
+        bottom: 25px;
+        right: -10px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .miao-body {
+    width: 300px;
+    height: 200px;
+    background-color: $body;
+    margin-top: -30px;
+    border-radius: 200px 200px 150px 150px;
+
+    .hands {
+      @include FLexItem;
+
+      .hand {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: 70px;
+        border: 5px solid $dark;
+        border-top: none;
+        border-radius: 0 0 150px 150px;
+
+        &.left-hand {
+          transform: rotate(-35deg);
+        }
+
+        &.right-hand {
+          transform: rotate(35deg);
+        }
+
+        .hand-plam {
+          background-color: $dark;
+          width: 100%;
+          height: 25px;
+          position: absolute;
+          bottom: -2px;
+          border-radius: 0 0 150px 150px;
+        }
+      }
+    }
+  }
+
+  .legs {
+    @include FLexItem;
+
+    .leg {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      margin-top: -20px;
+      background-color: $body;
+      border-top: none;
+      border-radius: 0 0 150px 150px;
+
+      &.left-leg {
+        margin-right: 20px;
+      }
+
+      &.right-leg {
+        margin-left: 20px;
+      }
+    }
+  }
+}
