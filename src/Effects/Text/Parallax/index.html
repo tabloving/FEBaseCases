@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Parallax Effect</title>
+  <link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+  <section class="wrapper">
+    <div class="left">
+      <h1 class="mainText">HAPPY <br>NEW<br> YEAR!</h1>
+    </div>
+    <div class="right">
+      <h1 class="mainText">HAPPY <br>NEW<br> YEAR!</h1>
+    </div>
+  </section>
+</body>
+<script>
+  const mainText = document.querySelectorAll('.mainText');
+
+  const textParallax = (e) => {
+    mainText.forEach(item => {
+      let x = (window.innerWidth - e.clientX * 2) / 3 ;
+      item.style.transform = `skewY(calc(var(--i,1) * 20deg)) translateX(${x}px)`;
+    })
+  };
+
+  document.addEventListener('mousemove', textParallax);
+</script>
+
+</html>
