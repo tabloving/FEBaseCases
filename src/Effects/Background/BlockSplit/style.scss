@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100vh;
+  background:
+  url(chun.png) center no-repeat,
+  #ee312d;
+  position: relative;
+  overflow: hidden;
+
+  .mainText {
+    width: inherit;
+    height: inherit;
+    line-height: 1.1em;
+    font-family: 'Long Cang', sans-serif;
+    font-size: min(18vw, 18vh);
+    color: #fff;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    text-shadow: 2px 2px 2px #ddd;
+  }
+
+  .cover {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+    transform-style: preserve-3d;
+    perspective: 500px;
+
+    .block {
+      animation: ani 2s ease-in-out forwards;
+    }
+
+    &.loaded {
+      .block {
+        background-image: url(bg.png);
+        animation: rever 2s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes ani {
+  0% {
+    transform: translateZ(2000px);
+    background-image: url(bg.png);
+  }
+  100% {
+    transform: translateZ(0px);
+    background-image: url(bg.png);
+    border: 1px solid rgba($color: #111, $alpha: 0.05);
+  }
+}
+
+@keyframes rever {
+  0% {
+    transform: translateZ(0px);
+  }
+  100% {
+    transform: translateZ(2000px);
+  }
+}

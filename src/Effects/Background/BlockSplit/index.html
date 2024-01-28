@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block Split Background</title>
+  <link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+  <section id="wrapper">
+    <h1 class="mainText">
+     二零二四 甲辰龙年 <br> 新春吉祥
+    </h1>
+    <div class="cover">
+    </div>
+  </section>
+</body>
+<script>
+  const cover = document.querySelector('.cover');
+  const posP = cover.getBoundingClientRect();
+
+  for (let i = 0; i < 400; i++) {
+    const t = Math.random() * 5;
+    let block = document.createElement('div');
+    block.classList.add('block');
+    block.style.animationDuration = `${2 + t}s`;
+    block.style.animationDelay = `${1 + t * 0.5}s`;
+
+    cover.appendChild(block);
+    const pos = block.getBoundingClientRect();
+    block.style.backgroundPosition = `${pos.left / posP.width * 100}% ${pos.top / posP.height * 100}%`;
+  }
+
+  setTimeout(()=>{
+    cover.classList.add('loaded')
+    document.getElementsByClassName('mainText')[0].innerHTML = '凛冬散尽 星河长明<br>愿你新的一年里<br>平安喜乐 万事顺遂<br> 0 ERROR  0 BUG'
+  },13000)
+
+</script>
+
+</html>
