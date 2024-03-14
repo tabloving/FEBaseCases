@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stippling Text</title>
+  <style>
+    :root {
+      --zi: #660e4a;
+      --hei: #14111b;
+      --bai: #fde4e2;
+      --hong: rgba(252, 52, 55, 0.6)
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(var(--zi), var(--hei));
+    }
+
+    h1 {
+      color: var(--bai);
+      font-size: min(15vw, 15vh);
+      letter-spacing: 8px;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: transparent;
+        background-image: radial-gradient(var(--hong) 0.012em, transparent 0.012em);
+        background-size: 8px 8px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1px var(--hong);
+        transition: 0.2s linear;
+      }
+
+      &:hover {
+        &::before {
+          top: -0.04em;
+          left: -0.04em;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 data-text="变质的洋流">变质的洋流</h1>
+</body>
+
+</html>
