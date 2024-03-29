@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrast Text Background Effect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: repeating-radial-gradient(circle at 100% 100%, #fff, #808080 5px, #fff 10px);
+      background-size: 200%;
+      filter: contrast(2000%);
+      user-select: none;
+
+      & h1 {
+        font-family: Lisu, serif;
+        font-size: 12vw;
+        color: red;
+        opacity: 0.22;
+        filter: blur(0.05em);
+        transform: rotateZ(-2deg);
+        transition: all 1s ease-out;
+      }
+
+      &:hover h1 {
+        opacity: 0.5;
+        filter: blur(0);
+        transform: rotateZ(2deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>BIAN ZHI <br> DE ❤ <br> YANG LIU</h1>
+  </main>
+</body>
+
+</html>
