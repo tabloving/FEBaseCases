@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Loading Text</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #2e2e2e;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    h1 {
+      width: 460px;
+      color: #fff;
+      font-size: 6em;
+      text-align: left;
+      letter-spacing: 10px;
+      font-family: "Ubuntu Mono", monospace;
+      padding: 10px 40px;
+      background: #52bb91;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 93% 100%, 0 100%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 data-text="ILOVEYOU">ILOVEYOU</h1>
+</body>
+<script>
+  const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let timer = null;
+  document.querySelector("h1").addEventListener("mouseover", (e) => {
+    let times = 0;
+    clearInterval(timer);
+    timer = setInterval(() => {
+      e.target.innerText = e.target.innerText
+        .split("").slice(0, e.target.dataset.text.length - 1).map((letter, index) => {
+          if (index < times) return e.target.dataset.text[index]
+          return LETTERS[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (times >= e.target.dataset.text.length - 1) {
+        clearInterval(timer)
+        e.target.innerText = e.target.dataset.text
+      };
+      times += 1 / 4;
+
+    }, 30);
+  });
+</script>
+
+</html>
