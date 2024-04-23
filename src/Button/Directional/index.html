@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Directional Button Hover</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: #2e2e2e;
+      display: grid;
+      place-items: center;
+
+      #btn {
+        width: 300px;
+        height: 100px;
+        background-color: #444;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        display: grid;
+        place-items: center;
+
+        & span {
+          font-size: 3em;
+          letter-spacing: 2px;
+          color: #fff;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        &::after {
+          content: "";
+          width: 0;
+          aspect-ratio: 1;
+          position: absolute;
+          top: var(--y, 0px);
+          left: var(--x, 0px);
+          translate: -50% -50%;
+          background-color: #43b384;
+          border-radius: 50%;
+          transition: 0.6s ease-out, top 0s, left 0s;
+        }
+
+        &:hover::after {
+          width: 650px;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="btn"><span>HOVER</span></div>
+</body>
+<script>
+  const BTN = document.getElementById("btn");
+
+  BTN.addEventListener("mouseover", (e) => {
+    let x = e.pageX - BTN.offsetLeft;
+    let y = e.pageY - BTN.offsetTop;
+
+    BTN.style.setProperty("--x", `${x}px`);
+    BTN.style.setProperty("--y", `${y}px`);
+  });
+
+</script>
+
+</html>
