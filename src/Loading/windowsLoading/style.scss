@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+html,
+body {
+  height: 100vh;
+  background: #0077d5;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  i {
+    --r: 180px;
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    border-radius: 50%;
+    translate: calc(sin(var(--angle)) * var(--r)) calc(cos(var(--angle)) * var(--r));
+    animation: rotate 3.5s infinite ease-in-out;
+  }
+
+  @for $i from 1 to 11 {
+    i:nth-child(#{$i}) {
+      z-index: #{$i};
+      animation-delay: #{$i * -0.12}s;
+      background: #{hsl($i * 20 + 10, 80%, 65%)};
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    --angle: 0deg;
+  }
+  85%,
+  100% {
+    --angle: 360deg;
+  }
+}
