@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Verification Code Style</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: grid;
+      place-content: center;
+    }
+
+    input[type=text] {
+      --N: 6;  /* 内容长度 */
+      --W: 1ch; /* 单个字符宽度 -- 必须等宽体体 */
+      --C: #888; /* 边框颜色 */
+      --B: 2px; /* 边框粗细 */
+      --G: 0.15em; /* 线框间距 */
+
+      font-size: 70px;
+      font-family: Jetbrains Mono, monospace;
+      line-height: 1.4;
+      letter-spacing: var(--W);
+
+      width: calc(var(--N) * (var(--W) * 2));
+      padding-left: calc((var(--W) - var(--G)) / 2);
+      clip-path: inset(0 calc(var(--W) / 2) 0 0);
+      border: none;
+      outline: none;
+
+      background:
+        repeating-linear-gradient(90deg, var(--C) 0 var(--B), #0000 0 calc(var(--W) * 2 - var(--G) - var(--B)), var(--C) 0 calc(var(--W) * 2 - var(--G)), #0000 0 2ch),
+        conic-gradient(from 0deg at calc(100% - var(--G) - (var(--B) / 2)) var(--B), #0000 75%, var(--C) 0) 0 0 / calc(var(--W) * 2) calc(100% - var(--B));
+    }
+
+    input[type=text]:focus-visible {
+      --C: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" maxlength="6">
+</body>
+
+</html>
