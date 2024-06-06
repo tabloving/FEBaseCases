@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Text use Canvas</title>
+  <style>
+    @property --angle {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+      font-size: 0;
+    }
+
+    canvas {
+      background: #2e2e2e;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    input {
+      --main-color: #B87FF1;
+      --bg-color: #353535;
+      width: 500px;
+      height: 60px;
+      line-height: 60px;
+      position: fixed;
+      bottom: 60px;
+      left: calc(50% - 250px);
+      padding: 6px 0;
+      color: var(--main-color);
+      font-size: 40px;
+      font-family: arial;
+      text-align: center;
+      border: 1px solid var(--main-color);
+      outline: none;
+      border-radius: 10px;
+      letter-spacing: 4px;
+      background: var(--bg-color);
+      transition: all 0.5s linear;
+      caret-color: var(--main-color);
+      cursor: pointer;
+      filter: hue-rotate(var(--angle));
+      animation: ani 20s linear infinite alternate;
+      opacity: 0;
+
+      &:not(:focus-visible) {
+        --main-color: #4d4d4d;
+        --bg-color: #303030;
+
+      }
+    }
+
+    @keyframes ani {
+      0% {
+        --angle: 0deg
+      }
+
+      100% {
+        --angle: 360deg
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <input id="input" type="text" maxlength="10" placeholder="请输入..." value="谢谢观看，再会" />
+</body>
+<script src="particle.js"></script>
+
+</html>
