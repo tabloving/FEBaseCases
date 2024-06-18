@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background - Falling</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #262626;
+      background-image: linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(#333 1px, transparent 1px);
+      background-size: 5vh 5vh;
+      overflow: hidden;
+      position: relative;
+
+      & h2 {
+        color: #fff;
+        font-size: 8em;
+        font-family: consolas;
+      }
+
+      .ball {
+        position: absolute;
+        top: 0;
+        width: 20px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: #0f0;
+        border: 5px solid rgba(0, 0, 0, .6);
+        animation: fall 10s linear forwards;
+        transform-origin: top;
+      }
+    }
+
+    @keyframes fall {
+
+      /* hide the ball
+       * 隐藏小球
+       */
+      0% {
+        transform: translateY(0vh) scale(0);
+      }
+
+      /* growing and stay 
+       * 小球放大，停留在顶部
+       */
+      10%,
+      45% {
+        transform: translateY(0vh) scale(1);
+      }
+
+      /* falling 
+       * 小球下落
+       */
+      55% {
+        transform: translateY(calc(100vh - 100%)) scale(1);
+      }
+
+      /* change transform origin to bottom 
+       * 将转换中心变成底部，为了呈现没入底部的效果
+       */
+      90% {
+        transform: translateY(calc(100vh - 100%)) scale(1);
+        transform-origin: bottom;
+      }
+
+      /* disappearing 
+       * 小球消失
+       */
+      100% {
+        transform: translateY(calc(100vh - 100%)) scale(0);
+        transform-origin: bottom;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Falling</h2>
+</body>
+<script>
+  function falling() {
+    let ele = document.createElement('div')
+    ele.classList.add('ball')
+    document.body.appendChild(ele)
+
+    let size = Math.random() * 25
+    ele.style.width = 5 + size + 'px'
+    ele.style.left = Math.random() * + innerWidth + 'px'
+
+    let angle = Math.random() * 360
+    ele.style.filter = `hue-rotate(${angle}deg)`
+
+    setTimeout(() => {
+      document.body.removeChild(ele)
+    }, 10000)
+  }
+
+  setInterval(falling, 200)
+</script>
+
+</html>
