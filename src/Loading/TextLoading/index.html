@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Animation Loader</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+  <style>
+    body {
+      height: 100vh;
+      background: #353940;
+      color: #f66;
+      accent-color: #f66;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      overflow: hidden;
+    }
+
+    .loader {
+      font: 5em/1.5 'baloo', sans-serif;
+
+      .letter {
+        display: inline-block;
+        margin: 0 2px;
+        animation-name: flip;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: forwards;
+      }
+
+      &:has(~ .items input[id="flip"]:checked) .letter {
+        animation-name: flip;
+      }
+
+      &:has(~ .items input[id="wave"]:checked) .letter {
+        animation-name: wave;
+        animation-direction: backwards;
+      }
+
+      &:has(~ .items input[id="pop"]:checked) .letter {
+        animation-name: pop;
+      }
+
+      &:has(~ .items input[id="tilted"]:checked) .letter {
+        animation-name: tilted;
+      }
+
+      &:has(~ .items input[id="crazy"]:checked) .letter {
+        animation-name: crazy;
+      }
+
+      &:has(~ .items input[id="newone"]:checked) .letter {
+        animation-name: newone;
+      }
+
+
+    }
+
+
+    .items {
+      position: fixed;
+      bottom: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input[type="radio"] {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+
+      label {
+        font-size: 18px;
+        color: #fff;
+        font-family: sans-serif;
+        cursor: pointer;
+        margin-left: 8px;
+        transition: 0.3s linear;
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+
+      & input[type="radio"]:checked+label {
+        color: #f66;
+      }
+
+    }
+
+
+    @keyframes flip {
+
+      0%,
+      100% {
+        transform: rotateX(0deg);
+      }
+
+      50% {
+        transform: rotateX(90deg);
+      }
+    }
+
+    @keyframes wave {
+      0% {
+        transform: translateY(0em);
+      }
+
+      50% {
+        transform: translateY(-1rem);
+      }
+    }
+
+
+    @keyframes pop {
+
+      0%,
+      100% {
+        transform: rotateZ(5deg) scale(0.75) translateY(0);
+        opacity: 0.1;
+      }
+
+      50% {
+        transform: rotateZ(-5deg) scale(1) translateY(-0.5em);
+        opacity: 1;
+      }
+    }
+
+    @keyframes tilted {
+
+      0%,
+      100% {
+        transform: rotateZ(-15deg);
+      }
+
+      50% {
+        transform: rotateZ(15deg);
+      }
+    }
+
+    @keyframes crazy {
+      0% {
+        transform: translateY(0) rotateX(90deg);
+      }
+
+      50% {
+        transform: translateY(-1em) rotateX(0deg);
+      }
+
+      100% {
+        transform: translateY(0) rotateX(-90deg);
+      }
+    }
+
+    @keyframes newone {
+
+      0%,
+      100% {
+        font-size: 3rem;
+      }
+
+      50% {
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader">Loading</div>
+
+  <form class="items">
+    <input type="radio" name="ani" id="flip" checked>
+    <label for="flip">flip</label>
+
+    <input type="radio" name="ani" id="wave">
+    <label for="wave">wave</label>
+
+    <input type="radio" name="ani" id="pop">
+    <label for="pop">pop</label>
+
+    <input type="radio" name="ani" id="tilted">
+    <label for="tilted">tilted</label>
+
+    <input type="radio" name="ani" id="crazy">
+    <label for="crazy">crazy</label>
+
+    <input type="radio" name="ani" id="newone">
+    <label for="newone">newone</label>
+  </form>
+</body>
+<script>
+  let animatedText = document.querySelectorAll(".loader");
+
+  function animate(element) {
+    let textArray = element.innerText.split("");
+    element.firstChild.remove();
+
+    let elArray = textArray.map(
+      (letter, index) => {
+        if (letter == " ") letter = '&nbsp;';
+        let el = document.createElement("span");
+        el.className = "letter";
+        el.innerHTML = letter;
+        el.style.animationDelay = index / (textArray.length) + "s";
+        element.appendChild(el);
+        return el;
+      }
+    );
+    element.innerHtml = elArray;
+  }
+
+  Array.from(animatedText).map(animate)
+</script>
+
+</html>
