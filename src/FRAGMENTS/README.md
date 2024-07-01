@@ -9,3 +9,4 @@ CSS知识碎片
 ### 索引
 
 - [更改插入光标的颜色](./examples/01.caret-color.html)
+- [链接平滑滚动](./examples/02.smooth-scroll.html)
