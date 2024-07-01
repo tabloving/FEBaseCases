@@ -36,7 +36,7 @@
         ├── CSSDrawing/         // 多标签 
         ├── SingleDiv/          // 单标签
         ├── ...
-    └── FRAGMENT/             // CSS知识片段     
+    └── FRAGMENTS/             // CSS知识片段     
         ├── ...
     └── PAGES/                // 一些页面成品案例
         ├── ...
@@ -44,7 +44,7 @@
 └── ...
 ```
 
-### CSS知识碎片 [`📋FRAGMENT`](/src/FRAGMENT/README.md)
+### CSS知识碎片 [`📋FRAGMENTS`](/src/FRAGMENTS/README.md)
 
 > 将`CSS`中一些容易被忽视的知识点或者技巧，单独抽离出来，方便单点学习与复习，加强知识记忆。
 
