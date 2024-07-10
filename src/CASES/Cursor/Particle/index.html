@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Cursor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #2e2e2e;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas></canvas>
+</body>
+<script>
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');
+
+  // 设置canvas大小
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // 粒子类
+  class Particle {
+    constructor(x, y, coef) {
+      this.x = x;
+      this.y = y;
+      this.coef = coef;  // 鼠标移动时的减速系数
+      this.size = Math.random() * 5 + 1;
+      this.speedX = Math.random() * 3 - 1.5;
+      this.speedY = Math.random() * 3 - 1.5;
+      this.color = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.8)`;
+
+    }
+
+    // 更新粒子位置
+    update(coef) {
+      this.speedX *= coef;
+      this.speedY *= coef;
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.size > 0.5) this.size -= 0.1;
+    }
+
+    // 绘制粒子 圆形
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // 粒子数组
+  let particles = [];
+
+  // 生成粒子的函数
+  function createParticles(x, y, count, coef) {
+    for (let i = 0; i < count; i++) {
+      particles.push(new Particle(x, y, coef));
+    }
+  }
+
+  // 点击产生粒子
+  canvas.addEventListener('click', function (event) {
+    createParticles(event.x, event.y, 100, 1);
+  });
+
+  // 在鼠标移动时生成粒子
+  canvas.addEventListener('mousemove', function (event) {
+    createParticles(event.x, event.y, 5, 0.95);
+  });
+
+  // 动画函数
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update(particles[i].coef);
+      particles[i].draw();
+      // 移除过小的粒子
+      if (particles[i].size <= 0.5) {
+        particles.splice(i, 1);
+        i--;
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+
+</html>
