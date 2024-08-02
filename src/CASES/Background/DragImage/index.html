@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop - image</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: #2e2e2e;
+      display: grid;
+      place-content: center;
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        .box {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          border: 2px solid #f2f2f2;
+          border-radius: 20px;
+          overflow: hidden;
+          transition: all 0.3s linear;
+
+          &.drag-over{
+            border-style: dashed;
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+
+          .img {
+            width: 100%;
+            height: 100%;
+            background-image: url(https://picsum.photos/seed/picsum/200);
+            background-size: cover;
+            cursor: move;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="box">
+      <div class="img" draggable="true"></div>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </main>
+</body>
+<script>
+  const BOXES = document.querySelectorAll('.box')
+  const IMG = document.querySelector('.img')
+
+  BOXES.forEach(box => {
+
+    box.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      e.target.classList.add('drag-over')
+    })
+
+    box.addEventListener('dragleave', (e) => {
+      e.target.classList.remove('drag-over')
+    })
+
+    box.addEventListener('drop', (e) => {
+      e.preventDefault()
+      e.target.classList.remove('drag-over')
+      e.target.appendChild(IMG)
+    })
+  })
+
+</script>
+
+</html>
