@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background - Chess Board</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: #2e2e2e;
+      display: grid;
+      grid-template-rows: 300px 300px;
+      grid-template-columns: 300px 300px;
+      place-content: center;
+      place-items: center;
+      gap: 60px;
+    }
+
+    div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ffffff;
+      font-size: 4em;
+      color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #one {
+      background: conic-gradient(#fff 0 90deg,
+          #ddd 90deg 180deg,
+          #fff 180deg 270deg,
+          #ddd 270deg);
+      background-size: 60px 60px;
+    }
+
+    #two {
+      background-image: repeating-conic-gradient(#ddd 0 100grad, #fff 0 200grad);
+      background-size: 60px 60px;
+    }
+
+    #three {
+      background-image: linear-gradient(45deg,
+          #ddd 25%,
+          transparent 25% 75%,
+          #ddd 75%),
+        linear-gradient(45deg, #ddd 25%, transparent 25% 75%, #ddd 75%);
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
+    }
+
+    #four {
+      background: repeating-linear-gradient(90deg, #fff 0 30px, #ddd 0 60px),
+        repeating-linear-gradient(#fff 0 30px, #ddd 0 60px);
+      background-blend-mode: difference;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='one'>1</div>
+  <div id='two'>2</div>
+  <div id='three'>3</div>
+  <div id="four">4</div>
+</body>
+
+</html>
