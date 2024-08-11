@@ -20,10 +20,9 @@ CSS绘图系列
 | ![蝙蝠侠](/public/thumb/cssdrawing/batman.png) | ![圣诞老人](/public/thumb/cssdrawing/santa.png) | ![小熊](/public/thumb/cssdrawing/bear.png) |
 
 <!-- 3 -->
-| [`Cat`](/src/DRAWING/CSSDrawing/Cat/index.html)  |    [`Parrot`](/src/DRAWING/CSSDrawing/Parrot/index.html)   |    [`Continue`](/src/DRAWING/CSSDrawing/README.md)   |
+| [`Cat`](/src/DRAWING/CSSDrawing/Cat/index.html)  |    [`Parrot`](/src/DRAWING/CSSDrawing/Parrot/index.html)   |    [`Olympic`](/src/DRAWING/CSSDrawing/OlympicSymbol/index.html)   |
 | :--------------------------------------------: | :-------------------------------------------: | :-------------------------------------------: |
-| ![猫咪](/public/thumb/cssdrawing/cat.png) | ![鹦鹉](/public/thumb/cssdrawing/parrot.png) | ![待续](/public/thumb/singlediv/continue.png) |
-
+| ![猫咪](/public/thumb/cssdrawing/cat.png) | ![鹦鹉](/public/thumb/cssdrawing/parrot.png) | ![奥运五环](/public/thumb/cssdrawing/olympic.png) |
 
 <!-- [`Continue`](/src/DRAWING/CSSDrawing/README.md)
 ![待续](/public/thumb/singlediv/continue.png) -->
