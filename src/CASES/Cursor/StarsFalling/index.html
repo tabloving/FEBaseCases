@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Background - Stars Falling</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        background-image: radial-gradient(circle at 50% 50%, #2f3040, #1f2020);
+        overflow: hidden;
+      }
+
+      .star {
+        /* 关闭宽高，有神奇效果 */
+        width: 1px;
+        height: 1px;
+        position: absolute;
+      }
+
+      .star:before {
+        position: absolute;
+        content: '\2726';
+        inset: 0;
+        box-shadow: 0 0 1em 0.1em #40324c;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // 设置初始坐标
+      let x1 = 0,
+        y1 = 0
+      // 获取视口高度
+      const vh = Math.max(
+          document.documentElement.clientHeight || 0,
+          window.innerHeight || 0
+        ),
+        // 绘制间距
+        drawGap = 50,
+        // 隐藏延时 设置很大时会停留喔！！
+        delay = 1000,
+        // 星星大小
+        starSize = ['0.7em', '1em', '1.3em', '1.6em'],
+        // 星星填充颜色
+        colors = ['#E23636', '#F9F3EE', '#E1F8DC', '#B8AFE6', '#AEE1CD', '#5EB0E5'],
+        // 根据范围生成随机数
+        rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+        // 从数组中随机选取一个
+        pick = ary => ary[rand(0, ary.length - 1)],
+        // 计算两点间距离
+        distanceTo = (x1, y1, x2, y2) =>
+          Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)),
+        // 判断是否需要绘制
+        // 如果两点间距离大于绘制间距，则返回 true
+        shouldDraw = (x, y) => distanceTo(x1, y1, x, y) >= drawGap,
+        // 创建星星元素
+        createStar = (x, y) => {
+          const star = document.createElement('div')
+          star.className = 'star'
+          star.style.top = `${y + rand(-20, 20)}px`
+          star.style.left = `${x}px`
+          star.style.color = pick(colors)
+          star.style.fontSize = pick(starSize)
+          document.body.appendChild(star)
+
+          const size = 10 + 5 * parseFloat(getComputedStyle(star).fontSize)
+          // 创建动画
+          star.animate(
+            {
+              translate: `0 ${y + size > vh ? vh - y : size}px`,
+              opacity: 0,
+              transform: `rotateX(${rand(1, 500)}deg) rotateY(${rand(1, 500)}deg)`
+            },
+            {
+              duration: delay,
+              fill: 'forwards'
+            }
+          )
+          // 移除星星
+          setTimeout(() => {
+            star.remove()
+          }, delay)
+        }
+
+      // 监听body的鼠标移动
+      document.body.addEventListener('mousemove', e => {
+        const { clientX, clientY } = e
+        if (shouldDraw(clientX, clientY)) {
+          createStar(clientX, clientY)
+          x1 = clientX
+          y1 = clientY
+        }
+      })
+    </script>
+  </body>
+</html>
