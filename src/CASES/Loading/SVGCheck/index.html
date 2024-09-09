@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Loading - Check Animation with SVG</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+      }
+
+      svg {
+        width: 150px;
+        height: 150px;
+
+        fill: none;
+        stroke: #127c5d;
+        stroke-width: 5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+
+        #circle {
+          stroke-dasharray: 450;
+          stroke-dashoffset: 450;
+          transform: rotate(-90deg);
+          transform-origin: center;
+
+          animation: loading 1.2s forwards;
+        }
+
+        #check {
+          stroke-dasharray: 200;
+          stroke-dashoffset: 200;
+          animation: loading 1.2s 1s forwards;
+        }
+      }
+
+      @keyframes loading {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 150 150">
+      <circle
+        id="circle"
+        cx="75"
+        cy="75"
+        r="70" />
+      <polyline id="check" points="40 80 70 105 110 45" /">
+    </svg>
+  </body>
+</html>
