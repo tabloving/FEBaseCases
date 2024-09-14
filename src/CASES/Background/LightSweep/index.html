@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Light Sweep - Container</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        background: #2e2e2e;
+        display: grid;
+        place-content: center;
+      }
+
+      .container {
+        width: 400px;
+        height: 60px;
+        background: rgb(16, 163, 117);
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+        user-select: none;
+
+        span {
+          color: #fff;
+          letter-spacing: 1px;
+          font-size: 20px;
+          z-index: 1;
+        }
+
+        &::after {
+          content: '';
+          width: 150%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: linear-gradient(
+            to right,
+            transparent 0%,
+            rgb(58, 188, 140) 50%,
+            transparent 100%
+          );
+          animation: sweep 3s ease infinite;
+        }
+      }
+
+      @keyframes sweep {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span>订阅</span>
+    </div>
+  </body>
+</html>
