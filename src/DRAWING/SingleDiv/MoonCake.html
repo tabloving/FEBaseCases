@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>MOONCAKE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+        background: radial-gradient(#f2de7a, #e7a423);
+      }
+
+      /* 月饼主体 */
+      div {
+        --r: #ff4500;
+        --y: #ff8c00;
+        --y-2: #ffa500;
+        --b-5: rgba(255, 69, 0, 0.5);
+        --b-7: rgba(255, 69, 0, 0.7);
+
+        --border: radial-gradient(var(--r) 70%, transparent 71%);
+        --padding-border: radial-gradient(var(--y-2) 70%, transparent 71%);
+        --stamen: radial-gradient(ellipse, var(--y) 55%, transparent 60%);
+        --petal: radial-gradient(
+          ellipse,
+          transparent 45%,
+          var(--y) 45%,
+          var(--y) 65%,
+          transparent 70%
+        );
+        --circle: radial-gradient(
+          circle,
+          transparent 45%,
+          var(--y) 45%,
+          var(--y) 65%,
+          transparent 70%
+        );
+
+        width: 300px;
+        height: 300px;
+        margin-left: 80px;
+        background: linear-gradient(var(--r), var(--r)) 2.6% 45% / 1.8% 34%,
+          linear-gradient(var(--b-7), var(--b-7)) 8.8% 0% / 2% 70%,
+          linear-gradient(var(--b-5), var(--b-5)) 17.5% 46% / 2% 70%,
+          linear-gradient(var(--b-5), var(--b-5)) 29.5% 62% / 2% 70%,
+          linear-gradient(var(--b-5), var(--b-5)) 42% 80% / 2% 70%,
+          linear-gradient(var(--b-5), var(--b-5)) 58% 80% / 2% 70%,
+          linear-gradient(var(--b-5), var(--b-5)) 71.1% 62% / 2% 70%,
+          linear-gradient(var(--b-5), var(--b-5)) 82.5% 46% / 2% 70%,
+          linear-gradient(var(--b-7), var(--b-7)) 91.3% 0% / 2% 70%,
+          linear-gradient(var(--r), var(--r)) 97.4% 45% / 1.8% 32%,
+          radial-gradient(var(--y) 70%, transparent 71%) 98% 49% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 95% 64% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 88% 77% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 78% 87% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 65% 94% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 50% 97% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 36% 94% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 22% 87% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 12% 77% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 5% 64% / 14% 14%,
+          radial-gradient(var(--y) 70%, transparent 71%) 2% 49% / 14% 14%,
+          linear-gradient(var(--y), var(--y)) 50% 26% / 79% 65%,
+          linear-gradient(var(--y), var(--y)) 50% 26% / 91.5% 50%,
+          linear-gradient(var(--y), var(--y)) 50% 26% / 96.5% 31%,
+          radial-gradient(var(--y) 53%, transparent 53%) 50% 50% / 100% 100%,
+          var(--border) 100% 50% / 18% 18%, var(--border) 97% 65% / 18% 18%,
+          var(--border) 90% 79% / 18% 18%, var(--border) 79% 90% / 18% 18%,
+          var(--border) 65% 97% / 18% 18%, var(--border) 50% 100% / 18% 18%,
+          var(--border) 35% 97% / 18% 18%, var(--border) 21% 90% / 18% 18%,
+          var(--border) 10% 79% / 18% 18%, var(--border) 3% 65% / 18% 18%,
+          var(--border) 0% 50% / 18% 18%,
+          linear-gradient(var(--r), var(--r)) 50% 26% / 100% 32%;
+        background-repeat: no-repeat;
+        transform: scaleY(0.7);
+
+        /* 月饼顶部 */
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: -32%;
+          background: var(--circle) 37% 15% / 17% 17%, var(--circle) 63% 15% / 17% 17%,
+            var(--circle) 82% 35% / 17% 17%, var(--circle) 82% 65% / 17% 17%,
+            var(--circle) 63% 85% / 17% 17%, var(--circle) 37% 85% / 17% 17%,
+            var(--circle) 18% 65% / 17% 17%, var(--circle) 18% 35% / 17% 17%,
+            var(--stamen) 50% 24% / 5% 20%, var(--petal) 50% 10% / 8% 40%,
+            var(--stamen) 50% 76% / 5% 20%, var(--petal) 50% 90% / 8% 40%,
+            var(--stamen) 76% 50% / 20% 5%, var(--petal) 90% 50% / 40% 10%,
+            var(--stamen) 24% 50% / 20% 5%, var(--petal) 10% 50% / 40% 10%,
+            radial-gradient(var(--y) 50%, transparent 51%) 50% 50% / 10% 10%,
+            var(--padding-border) 50% 2% / 14% 14%, var(--padding-border) 64% 5% / 14% 14%,
+            var(--padding-border) 78% 12% / 14% 14%,
+            var(--padding-border) 88% 23% / 14% 14%,
+            var(--padding-border) 95% 36% / 14% 14%,
+            var(--padding-border) 98% 50% / 14% 14%,
+            var(--padding-border) 95% 64% / 14% 14%,
+            var(--padding-border) 88% 77% / 14% 14%,
+            var(--padding-border) 78% 87% / 14% 14%,
+            var(--padding-border) 64% 94% / 14% 14%,
+            var(--padding-border) 50% 97% / 14% 14%,
+            var(--padding-border) 36% 94% / 14% 14%,
+            var(--padding-border) 22% 87% / 14% 14%,
+            var(--padding-border) 12% 77% / 14% 14%,
+            var(--padding-border) 5% 64% / 14% 14%, var(--padding-border) 2% 50% / 14% 14%,
+            var(--padding-border) 5% 36% / 14% 14%,
+            var(--padding-border) 12% 23% / 14% 14%,
+            var(--padding-border) 22% 12% / 14% 14%,
+            var(--padding-border) 36% 5% / 14% 14%,
+            radial-gradient(var(--y-2) 53%, transparent 53%) 50% 50% / 100% 100%,
+            var(--border) 50% 0% / 18% 18%, var(--border) 65% 3% / 18% 18%,
+            var(--border) 79% 10% / 18% 18%, var(--border) 90% 21% / 18% 18%,
+            var(--border) 97% 35% / 18% 18%, var(--border) 100% 50% / 18% 18%,
+            var(--border) 97% 65% / 18% 18%, var(--border) 90% 79% / 18% 18%,
+            var(--border) 79% 90% / 18% 18%, var(--border) 65% 97% / 18% 18%,
+            var(--border) 50% 100% / 18% 18%, var(--border) 35% 97% / 18% 18%,
+            var(--border) 21% 90% / 18% 18%, var(--border) 10% 79% / 18% 18%,
+            var(--border) 3% 65% / 18% 18%, var(--border) 0% 50% / 18% 18%,
+            var(--border) 3% 35% / 18% 18%, var(--border) 10% 21% / 18% 18%,
+            var(--border) 21% 10% / 18% 18%, var(--border) 35% 3% / 18% 18%,
+            radial-gradient(var(--r) 50%, transparent 51%) 50% 50% / 100% 100%;
+          background-repeat: no-repeat;
+          transform: scaleY(0.8);
+        }
+
+        /* 交叉花纹 */
+        &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: -32%;
+          background: var(--stamen) 50% 24% / 5% 20%, var(--petal) 50% 10% / 8% 40%,
+            var(--stamen) 50% 76% / 5% 20%, var(--petal) 50% 90% / 8% 40%,
+            var(--stamen) 76% 50% / 20% 5%, var(--petal) 90% 50% / 40% 10%,
+            var(--stamen) 24% 50% / 20% 5%, var(--petal) 10% 50% / 40% 10%;
+          background-repeat: no-repeat;
+          transform: scaleY(0.85) rotate(45deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+  </body>
+</html>
