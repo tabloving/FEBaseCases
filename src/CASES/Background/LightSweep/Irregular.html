@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Light Sweep - Irregular Figure</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        background: radial-gradient(#32b7cd, #42eeff 80%);
+        display: grid;
+        place-content: center;
+      }
+
+      .con {
+        position: relative;
+        overflow: hidden;
+        mask: url(https://game.gtimg.cn/images/lol/logo/big.png);
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: -10%;
+          background: linear-gradient(
+            45deg,
+            transparent 40%,
+            rgba(255, 255, 255, 0.6),
+            transparent 60%
+          );
+          animation: sweep 3s infinite;
+        }
+
+        .logo {
+          width: 300px;
+        }
+      }
+
+      @keyframes sweep {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con">
+      <img
+        src="https://game.gtimg.cn/images/lol/logo/big.png"
+        class="logo" />
+    </div>
+  </body>
+</html>
