@@ -1,0 +1,40 @@
+@import 'https://fonts.googleapis.com/css?family=Monoton';
+
+$colors: (#4159e5, #357b2d, #2f8f7f, #29b59e, #e32a18);
+
+body {
+  height: 100vh;
+  background: #2e2e2e;
+  display: grid;
+  place-content: center;
+}
+
+svg {
+  width: 1100px;
+  height: 300px;
+  font: {
+    family: 'Monoton';
+    size: 12em;
+  }
+}
+
+.text {
+  fill: none;
+  stroke-dasharray: 8% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 1%;
+  animation: stroke-offset 6s infinite linear;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      stroke: nth($colors, $i);
+      animation-delay: -$i * 1s;
+    }
+  }
+}
+
+@keyframes stroke-offset {
+  to {
+    stroke-dashoffset: -36%;
+  }
+}
