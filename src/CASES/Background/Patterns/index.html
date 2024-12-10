@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Background - Patterns</title>
+    <style>
+      html {
+        --s: 50px; /* size 网格尺寸 */
+        --c: #fff; /* bg color 背景颜色 */
+        --c1: #f3f3f3; /* line color 线条颜色 */
+        --_s: calc(2 * var(--s)) calc(2 * var(--s));
+        --_g: 35.36% 35.36% at;
+        --_c: #0000 66%, var(--c1) 68% 70%, #0000 72%;
+        background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) /
+            var(--_s),
+          radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
+          radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
+          radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
+          repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0 / var(--_s),
+          radial-gradient(var(--c) 66%, var(--c1) 68% 70%, var(--c) 72%) 0
+            calc(var(--s) / 2) / var(--s) var(--s) var(--c);
+        background-attachment: fixed;
+        height: 100vh;
+        display: grid;
+        place-content: center;
+      }
+
+      h1 {
+        font-family: lisu, sans-serif;
+        font-size: 9vmin;
+        color: #888;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>简单纹样背景</h1>
+  </body>
+</html>
