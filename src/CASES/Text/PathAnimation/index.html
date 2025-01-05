@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Text Effect - SVG Path Animation</title>
+    <style>
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      svg {
+        position: absolute;
+        bottom: 10%;
+        #textPath {
+          font-size: 1.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 800 400">
+      <defs>
+        <path
+          id="curve"
+          d="M 0 350 Q 200 100 450 300 Q 600 400 800 300"
+          stroke="#f74000"
+          stroke-width="10"
+          fill="none" />
+      </defs>
+
+      <use
+        x="0"
+        y="2%"
+        href="#curve" />
+
+      <text>
+        <textPath
+          href="#curve"
+          id="textPath"
+          startOffset="100%">
+          你指尖跃动的电光，是我此生不变的信仰。 变质的洋流~
+        </textPath>
+      </text>
+    </svg>
+  </body>
+  <script>
+    const textPath = document.getElementById('textPath')
+    let offset = 100
+
+    function animate() {
+      // 当offset大于20时继续动画，控制结束位置
+      if (offset > 20) {
+        offset -= 0.5 // 每次减少0.5%，控制速度
+        textPath.setAttribute('startOffset', `${offset}%`)
+        requestAnimationFrame(animate)
+      }
+    }
+
+    animate()
+  </script>
+</html>
