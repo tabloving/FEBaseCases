@@ -1,0 +1,15 @@
+@charset "UTF-8";
+html {
+  --s: 50px; /* size 尺寸 */
+  --c1: #c0b299; /* brick1 color 砖块1颜色 */
+  --c2: #a4a9aa; /* brick2 color 砖块2颜色 */
+  --c3: #2c2e2a; /* bg color 打底背景色（黑色部分） */
+  background: conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c1) 0), conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c2) 0) -webkit-calc(2 * var(--s)) 0, conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c2) 0) -webkit-calc(3 * var(--s)) var(--s), conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c1) 0) var(--s) var(--s), var(--c3);
+  background: conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c1) 0), conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c2) 0) -moz-calc(2 * var(--s)) 0, conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c2) 0) -moz-calc(3 * var(--s)) var(--s), conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c1) 0) var(--s) var(--s), var(--c3);
+  background: conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c1) 0), conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c2) 0) calc(2 * var(--s)) 0, conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c2) 0) calc(3 * var(--s)) var(--s), conic-gradient(at 45% 40%, rgba(0, 0, 0, 0) 75%, var(--c1) 0) var(--s) var(--s), var(--c3);
+  -o-background-size: calc(4 * var(--s)) calc(2 * var(--s));
+     background-size: -webkit-calc(4 * var(--s)) -webkit-calc(2 * var(--s));
+     background-size: -moz-calc(4 * var(--s)) -moz-calc(2 * var(--s));
+     background-size: calc(4 * var(--s)) calc(2 * var(--s));
+  background-attachment: fixed;
+}

@@ -1,0 +1,19 @@
+// 根据传入颜色生成砖块样式 generate the brick with custom color
+@function genBrick($color) {
+  @return conic-gradient(at 45% 40%, #0000 75%, #{$color} 0);
+}
+
+html {
+  --s: 50px; /* size 尺寸 */
+  --c1: #c0b299; /* brick1 color 砖块1颜色 */
+  --c2: #a4a9aa; /* brick2 color 砖块2颜色 */
+  --c3: #2c2e2a; /* bg color 打底背景色（黑色部分） */
+
+  $g1: genBrick(var(--c1));
+  $g2: genBrick(var(--c2));
+
+  background: $g1, $g2 calc(2 * var(--s)) 0, $g2 calc(3 * var(--s)) var(--s),
+    $g1 var(--s) var(--s), var(--c3);
+  background-size: calc(4 * var(--s)) calc(2 * var(--s));
+  background-attachment: fixed;
+}
