@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Background - Wavy border</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+      }
+
+      div {
+        --s: 30px;  /* size */
+        --w: 400px; /* width */
+
+        width: round(down, var(--w), 4 * var(--s));
+        aspect-ratio: 1;
+        border: calc(2 * var(--s)) solid #0000;
+        padding: calc(1.5 * var(--s));
+        box-sizing: border-box;
+        background: #458eff border-box;
+        mask: conic-gradient(#000 0 0) no-repeat 50% / calc(100% - 6 * var(--s))
+            calc(100% - 6 * var(--s)),
+          radial-gradient(var(--s), #000 100%, #0000 calc(100% + 1px)) 0 0 /
+            calc(4 * var(--s)) calc(4 * var(--s)),
+          radial-gradient(var(--s), #0000 calc(100% - 1px), #000) var(--s) var(--s) /
+            calc(2 * var(--s)) calc(2 * var(--s)) padding-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
