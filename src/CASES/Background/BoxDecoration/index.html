@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background - box-decoration-break</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: #f6f5ef;
+      display: grid;
+      place-content: center;
+    }
+
+    article {
+      width: clamp(300px, 45vw, 650px);
+      font-size: 1.4em;
+      font-family: sans-serif;
+      text-indent: 2em;
+      text-align: justify;
+      line-height: 2;
+      color: #333;
+
+      .highlight {
+        background: #eae9de;
+        color: #68675b;
+        margin: 0 0.3em;
+        padding: 0.05em 0.5em;
+        border-radius: 10px;
+        border: 3px solid #d1cec5;
+        box-decoration-break: clone;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    故夫知效一官、行比一乡、德合一君、而征一国者，其自视也，亦若此矣。而宋荣子犹然笑之。<span
+      class="highlight">且举世誉之而不加劝，举世非之而不加沮，定乎内外之分，辩乎荣辱之境，斯已矣。</span>彼其于世，未数数然也。虽然，犹有未树也。夫列子御风而行，泠然善也，旬有五日而后反。彼于致福者，未数数然也。此虽免乎行，犹有所待者也。若夫<span
+      class="highlight">乘天地之正，而御六气之辩，以游无穷</span>者，彼且恶乎待哉？故曰：<span class="highlight">至人无己，神人无功，圣人无名。</span>
+  </article>
+</body>
+
+</html>
