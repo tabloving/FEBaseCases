@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>inner corner border</title>
+    <style>
+      body {
+        height: 100vh;
+        background: #ddd;
+        display: grid;
+        place-content: center;
+        gap: 30px;
+      }
+
+      div {
+        --r: 20px; /* corner radius */
+        --w: 2px; /* border width */
+        width: 300px;
+        height: 120px;
+        background: radial-gradient(
+              var(--r) at var(--r) var(--r),
+              transparent calc(98% - var(--w)),
+              var(--c) calc(100% - var(--w)) 98%,
+              transparent
+            )
+            calc(var(--r) * -1) calc(var(--r) * -1) / 100% 100%,
+          linear-gradient(var(--c), var(--c)) calc(var(--r) - 1px) 0 /
+            calc(100% - var(--r) * 2 + 2px) var(--w) no-repeat,
+          linear-gradient(var(--c), var(--c)) calc(var(--r) - 1px) 100% /
+            calc(100% - var(--r) * 2 + 2px) var(--w) no-repeat,
+          linear-gradient(var(--c), var(--c)) 0 calc(var(--r) - 1px) / var(--w)
+            calc(100% - var(--r) * 2 + 2px) no-repeat,
+          linear-gradient(var(--c), var(--c)) 100% calc(var(--r) - 1px) / var(--w)
+            calc(100% - var(--r) * 2 + 2px) no-repeat;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 120px;
+        font-size: 2em;
+        color: var(--c);
+
+        &.red {
+          --c: #f00;
+          outline: 2px solid var(--c);
+          outline-offset: -7px;
+        }
+
+        &.blue {
+          --c: #0fbeff;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border: var(--w) solid var(--c);
+          }
+        }
+
+        &.green {
+          --c: #23be4d;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="red">OUTLINE</div>
+    <div class="blue">PSEUDO</div>
+    <div class="green">NONE</div>
+  </body>
+</html>
