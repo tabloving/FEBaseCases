@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>watermelon background</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        font-size: 0;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <pattern
+        id="pattern"
+        width="80"
+        height="1"
+        patternUnits="userSpaceOnUse">
+        <circle
+          r="99"
+          fill="#3f812d" />
+        <path
+          d="M0 0H32V1H0Z"
+          fill="#96c96d" />
+      </pattern>
+      <filter id="filter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".02"
+          numOctaves="3" />
+        <feDisplacementMap
+          in="SourceGraphic"
+          scale="48" />
+      </filter>
+      <rect
+        x="-10%"
+        y="-10%"
+        width="120%"
+        height="120%"
+        fill="url(#pattern)"
+        filter="url(#filter)" />
+    </svg>
+  </body>
+</html>
