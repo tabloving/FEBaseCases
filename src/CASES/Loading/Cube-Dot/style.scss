@@ -1,0 +1,139 @@
+:root {
+  --color: #fff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+  background: #2e2e2e;
+}
+
+.content {
+  width: 50vmin;
+  height: 50vmin;
+  perspective: 100vmin;
+  animation: spin-all 4s ease-in-out infinite;
+
+  %ani {
+    animation: spin-cube 2s ease-in-out -3s infinite alternate;
+  }
+
+  %pesudo {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: calc(100% - 2vmin);
+    height: calc(100% - 2vmin);
+    border-radius: 2vmin;
+    transform: rotateY(-90deg);
+    transform-origin: right bottom;
+    top: 2.5vmin;
+    left: 4vmin;
+    transition: all 1s ease 0s;
+    animation-name: spin-cube-before;
+    @extend %ani;
+  }
+
+  .cube {
+    background: var(--color);
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 2vmin;
+    transform: rotate(48deg) rotateX(22.5deg) rotateY(-22.5deg);
+    left: 14.5vmin;
+    position: absolute;
+    top: 5vmin;
+    transition: all 1s ease 0s;
+    transform-style: preserve-3d;
+    @extend %ani;
+
+    &::before {
+      @extend %pesudo;
+    }
+
+    &::after {
+      @extend %pesudo;
+      top: 4vmin;
+      left: 2.5vmin;
+      transform: rotateX(90deg);
+      animation-name: spin-cube-after;
+    }
+  }
+}
+
+@keyframes spin-all {
+  50%,
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes spin-cube {
+  0%,
+  50% {
+    border-radius: 100%;
+    transform: rotate(39deg) rotateX(0deg) rotateY(0deg);
+    left: 20vmin;
+    top: 10vmin;
+    width: 10vmin;
+    height: 10vmin;
+  }
+  50%,
+  100% {
+    border-radius: 2vmin;
+    transform: rotate(48deg) rotateX(22.5deg) rotateY(-22.5deg);
+    left: 14.5vmin;
+    top: 5vmin;
+    width: 20vmin;
+    height: 20vmin;
+  }
+}
+
+@keyframes spin-cube-before {
+  0%,
+  50% {
+    border-radius: 100%;
+    transform: rotateY(-180deg) rotateX(0deg);
+    left: 11vmin;
+    top: 9vmin;
+    width: 100%;
+    height: 100%;
+  }
+  50%,
+  100% {
+    border-radius: 2vmin;
+    transform: rotateY(-90deg);
+    left: 4vmin;
+    top: 2.5vmin;
+    width: calc(100% - 2vmin);
+    height: calc(100% - 2vmin);
+  }
+}
+
+@keyframes spin-cube-after {
+  0%,
+  50% {
+    border-radius: 100%;
+    transform: rotateY(0deg) rotateX(180deg);
+    left: 5vmin;
+    top: 12vmin;
+    width: 100%;
+    height: 100%;
+  }
+  50%,
+  100% {
+    border-radius: 2vmin;
+    transform: rotateX(90deg);
+    left: 2.5vmin;
+    top: 4vmin;
+    width: calc(100% - 2vmin);
+    height: calc(100% - 2vmin);
+  }
+}
