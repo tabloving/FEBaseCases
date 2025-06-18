@@ -37,7 +37,8 @@
         ├── SingleDiv/          // 单标签
         ├── ...
     └── FRAGMENTS/             // CSS知识片段     
-        ├── ...
+        ├── examples           // 代码段案例
+        ├── ... 
     └── PAGES/                // 一些页面成品案例
         ├── ...
     └── ...
@@ -67,6 +68,10 @@
 - [**`🍂 加载动画 --> Loading`**](src/CASES/Loading/)
 - [**`🖌️ 文本效果 --> Text`**](src/CASES/Text/)
 - [**`🧮 表单输入 --> FormInput`**](src/CASES/FormInput/)
+
+### 页面示例 [`🏘️PAGES`](/src/PAGES/README.md)
+
+> 将多维知识点整合，写成独立小页面，知识点综合应用示例，整合复习与分享。
 
 ### B 站地址
 
