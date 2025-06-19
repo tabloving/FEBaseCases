@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>hover + not</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        height: 100vh;
+        background: url(./assets/fr-04/bg.png) center/cover;
+        overflow: hidden;
+        position: relative;
+
+        /* &:hover .item{
+          filter: grayscale(1) blur(10px);
+
+          &:hover{
+            filter: none;
+          }
+        } */
+
+        &:hover .item:not(:hover) {
+          filter: grayscale(1) blur(5px);
+        }
+
+        .item {
+          position: absolute;
+          transform-origin: left bottom;
+          cursor: pointer;
+          bottom: 0;
+          transition: 0.3s linear;
+
+          &.fei {
+            bottom: -1vh;
+            left: 16vw;
+            scale: 0.95;
+            z-index: 3;
+          }
+
+          &.neo {
+            left: 40vw;
+            scale: 0.65;
+            z-index: 2;
+          }
+
+          &.tian {
+            left: 60vw;
+            scale: 0.6;
+            z-index: 1;
+          }
+
+          &.kuai {
+            bottom: -1vh;
+            left: 3vw;
+            scale: 0.6;
+            z-index: 2;
+          }
+
+          &.eee {
+            left: 81vw;
+            scale: 0.45;
+            z-index: 2;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img
+        class="item fei"
+        src="./assets/fr-04/feifei.png"
+        alt="" />
+      <img
+        class="item neo"
+        src="./assets/fr-04/neo.png"
+        alt="" />
+      <img
+        class="item tian"
+        src="./assets/fr-04/weizhentian.png"
+        alt="" />
+      <img
+        class="item kuai"
+        src="./assets/fr-04/fangkuai.png"
+        alt="" />
+      <img
+        class="item eee"
+        src="./assets/fr-04/eee.png"
+        alt="" />
+    </main>
+  </body>
+</html>
