@@ -11,8 +11,9 @@
 <img src='https://img.shields.io/badge/JavaScript-ES6+-blue?style=flat-square' alt="js version" style='cursor:pointer' />
 <img src='https://img.shields.io/badge/status-updating-orange?style=flat-square' alt="status" style='cursor:pointer' />
 <br>
-<img src='https://img.shields.io/github/repo-size/tabloving/FEBaseCases?style=flat-square&color=rgb(118, 139, 212)' alt="repo size" style='cursor:pointer' />
-<img src='https://img.shields.io/github/last-commit/tabloving/FEBaseCases/main?style=flat-square&color=rgb(124, 179, 66)' alt="last commit" style='cursor:pointer'/>
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/tabloving/FEBaseCases?style=flat-square&color=%23768bd4" style='cursor:pointer'>
+
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tabloving/FEBaseCases?style=flat-square&color=%237cb342" style='cursor:pointer'>
 </p>
 
 <br>
