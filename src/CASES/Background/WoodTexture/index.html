@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>background - wood texture</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      svg,
+      rect {
+        width: inherit;
+        height: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <filter id="filter">
+        <feTurbulence
+          baseFrequency="0.002 0.02"
+          numOctaves="9"
+          result="base" />
+        <feDiffuseLighting
+          surfaceScale="9"
+          lighting-color="#B98C63">
+          <feDistantLight
+            elevation="60"
+            azimuth="-90" />
+        </feDiffuseLighting>
+        <feDisplacementMap
+          in2="base"
+          scale="50" />
+      </filter>
+      <rect filter="url(#filter)" />
+    </svg>
+  </body>
+</html>
