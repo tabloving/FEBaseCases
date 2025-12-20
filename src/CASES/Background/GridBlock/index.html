@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>background - grid-block</title>
+    <style>
+      html {
+        --s: 60px;
+        --c1: #6b5344;
+        --c2: #f8ecc9;
+
+        --c: var(--c1) 0;
+        --g: conic-gradient(at 50% 25%, #0000 75%, var(--c));
+        background: repeating-linear-gradient(#0000 0 48%, var(--c) 50%), var(--g),
+          conic-gradient(#0000 75%, var(--c)) calc(var(--s) / 4) calc(var(--s) / 2),
+          var(--g) calc(var(--s) / 2) var(--s) var(--c2);
+        background-size: var(--s) var(--s), var(--s) calc(2 * var(--s));
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
