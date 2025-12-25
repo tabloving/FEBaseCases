@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>background - merry christmas</title>
+
+    <style>
+      html {
+        --s: 50px;
+        --c1: #d8d8d8;
+        --c2: #bb2528;
+        --c3: #146b3a;
+
+        --b: calc(var(--s) / 2.9);
+
+        --_r: calc(1.28 * var(--s) + var(--b) / 2) at left 50%;
+        --_f: calc(100% - var(--b)), var(--c1) calc(101% - var(--b)) 100%, #0000 101%;
+        --g0: calc(-0.8 * var(--s)), var(--c2) var(--_f);
+        --g1: calc(-0.8 * var(--s)), var(--c3) var(--_f);
+        --_s: calc(1.5 * var(--s) + var(--b));
+        background: radial-gradient(var(--_r) bottom var(--g0)) calc(2 * var(--s))
+            calc(-1 * var(--_s)),
+          radial-gradient(var(--_r) bottom var(--g1)) calc(-1 * var(--s))
+            calc(var(--_s) / -2),
+          radial-gradient(var(--_r) top var(--g1)) 0 var(--_s),
+          radial-gradient(var(--_r) top var(--g0)) var(--s) calc(var(--_s) / 2),
+          linear-gradient(var(--c2) 50%, var(--c3) 0);
+        background-size: calc(4 * var(--s)) var(--_s);
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
